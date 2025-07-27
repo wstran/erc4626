@@ -13,11 +13,25 @@ async function main() {
     const ERC4626Vault = await ethers.getContractFactory("MyVault");
 
     // Deploy the ERC4626 vault with the asset address
-    const vault = await ERC4626Vault.deploy("0x0Eeef3C9AF589548d335c0C01F62A534103BC715", "My Vault Token", "vDAI");
+    const vault = await ERC4626Vault.deploy("0xa7E134BD162883d580D86e3D1099a93FE3CFB8DD", "My Vault Token", "vDAI");
 
     await vault.deployed();
 
+    console.log('------- Deployment successful -------');
+
+    console.log(`Deployer address: ${vault.deployTransaction.from}`);
+
     console.log(`Vault deployed to: ${vault.deployTransaction.hash}`);
+
+    console.log(`Vault name: ${await vault.name()}`);
+
+    console.log(`Vault symbol: ${await vault.symbol()}`);
+
+    console.log(`Asset address: ${await vault.asset()}`);
+
+    console.log(`Total assets: ${await vault.totalAssets()}`);
+
+    console.log(`Deployed contract address: ${vault.address}`);
 }
 
 // // Main entry point for the deployment script

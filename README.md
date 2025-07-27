@@ -16,7 +16,7 @@ A secure and modular implementation of **ERC-4626**, the Ethereum standard for t
 
 ## 🚀 Deployment
 
-To deploy the vault contract on a testnet (e.g., Sepolia), run:
+> Deploy your ERC-4626 contract with a single command:
 
 ```bash
-npm run deploy:erc4626 sepolia
+npm run deploy:erc4626
